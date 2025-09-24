@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Анкета студента</title>
+</head>
+<body>
+
+<header>
+  <h1>Анкета студента</h1>
+</header>
+
+<main>
+  <form>
+
+    <section>
+      <fieldset>
+        <legend>Особисті дані</legend>
+
+        <label for="fullname">ПІБ:</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Введіть ваше ім’я та прізвище"><br><br>
+
+        <label for="email">Електронна пошта:</label>
+        <input type="email" id="email" name="email" placeholder="Введіть email"><br><br>
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password"><br><br>
+
+        <label for="age">Вік:</label>
+        <input type="number" id="age" name="age"><br><br>
+
+        <label for="dob">Дата народження:</label>
+        <input type="date" id="dob" name="dob"><br><br>
+
+        Стать:<br>
+        <input type="radio" id="male" name="gender" value="Чоловіча"><label for="male">Чоловіча</label><br>
+        <input type="radio" id="female" name="gender" value="Жіноча"><label for="female">Жіноча</label><br>
+        <input type="radio" id="other" name="gender" value="Інша"><label for="other">Інша</label><br><br>
+
+        Мова:<br>
+        <input type="checkbox" id="ukrainian" value="Українська"><label for="ukrainian">Українська</label><br><br>
+
+        <label for="country">Країна:</label>
+        <select id="country" name="country">
+          <option value="">Оберіть країну</option>
+          <option value="ukraine">Україна</option>
+        </select>
+      </fieldset>
+    </section>
+
+    <section>
+      <fieldset>
+        <legend>Навчальні предмети</legend>
+        <label for="subjects">Оберіть предмети:</label><br>
+        <select id="subjects" name="subjects" multiple size="5">
+          <option>Математика</option>
+          <option>Інформатика</option>
+          <option>Фізика</option>
+          <option>Хімія</option>
+          <option>Англійська мова</option>
+        </select><br><br>
+
+        <label for="interest">Оцініть зацікавленість в інформатиці:</label>
+        <input type="range" id="interest" name="interest" min="0" max="10">
+      </fieldset>
+    </section>
+
+    <section>
+      <fieldset>
+        <legend>Оцінка навичок</legend>
+
+        <label for="skills">Опишіть свої навички:</label><br>
+        <textarea id="skills" rows="5" cols="40" placeholder="Напишіть тут свої навички..."></textarea><br><br>
+
+        <label for="resume">Завантажте резюме:</label>
+        <input type="file" id="resume"><br><br>
+
+        <label for="color">Улюблений колір:</label>
+        <input type="color" id="color"><br><br>
+
+        <label for="time">Зручний час для навчання:</label>
+        <input type="time" id="time"><br><br>
+
+        <input type="submit" value="Відправити анкету">
+      </fieldset>
+    </section>
+
+  </form>
+</main>
+
+<footer>
+  <p>© 2025 Анкета студента</p>
+</footer>
+
+</body>
+</html>
