@@ -11,37 +11,40 @@
 </header>
 
 <main>
-  <form>
+  <!-- Форма із використанням POST -->
+  <!-- Використані різні елементи: input (text, email, password, number, date, radio, checkbox, file, color, time, range, submit), select, textarea -->
+  <form action="submit.php" method="post" enctype="multipart/form-data">
 
     <section>
       <fieldset>
         <legend>Особисті дані</legend>
 
         <label for="fullname">ПІБ:</label>
-        <input type="text" id="fullname" name="fullname" placeholder="Введіть ваше ім’я та прізвище"><br><br>
+        <input type="text" id="fullname" name="fullname" placeholder="Введіть ваше ім’я та прізвище" required><br><br>
 
         <label for="email">Електронна пошта:</label>
-        <input type="email" id="email" name="email" placeholder="Введіть email"><br><br>
+        <input type="email" id="email" name="email" placeholder="Введіть email" required><br><br>
 
         <label for="password">Пароль:</label>
-        <input type="password" id="password" name="password"><br><br>
+        <input type="password" id="password" name="password" required><br><br>
 
         <label for="age">Вік:</label>
-        <input type="number" id="age" name="age"><br><br>
+        <input type="number" id="age" name="age" min="0" max="99" required><br><br>
+
 
         <label for="dob">Дата народження:</label>
-        <input type="date" id="dob" name="dob"><br><br>
+        <input type="date" id="dob" name="dob" required><br><br>
 
         Стать:<br>
-        <input type="radio" id="male" name="gender" value="Чоловіча"><label for="male">Чоловіча</label><br>
+        <input type="radio" id="male" name="gender" value="Чоловіча" required><label for="male">Чоловіча</label><br>
         <input type="radio" id="female" name="gender" value="Жіноча"><label for="female">Жіноча</label><br>
         <input type="radio" id="other" name="gender" value="Інша"><label for="other">Інша</label><br><br>
 
         Мова:<br>
-        <input type="checkbox" id="ukrainian" value="Українська"><label for="ukrainian">Українська</label><br><br>
+        <input type="checkbox" id="ukrainian" name="language" value="Українська" checked><label for="ukrainian">Українська</label><br><br>
 
         <label for="country">Країна:</label>
-        <select id="country" name="country">
+        <select id="country" name="country" required>
           <option value="">Оберіть країну</option>
           <option value="ukraine">Україна</option>
         </select>
@@ -52,7 +55,7 @@
       <fieldset>
         <legend>Навчальні предмети</legend>
         <label for="subjects">Оберіть предмети:</label><br>
-        <select id="subjects" name="subjects" multiple size="5">
+        <select id="subjects" name="subjects[]" multiple size="5" required>
           <option>Математика</option>
           <option>Інформатика</option>
           <option>Фізика</option>
@@ -70,16 +73,17 @@
         <legend>Оцінка навичок</legend>
 
         <label for="skills">Опишіть свої навички:</label><br>
-        <textarea id="skills" rows="5" cols="40" placeholder="Напишіть тут свої навички..."></textarea><br><br>
+        <textarea id="skills" name="skills" rows="5" cols="40" placeholder="Напишіть тут свої навички..." required></textarea><br><br>
 
         <label for="resume">Завантажте резюме:</label>
-        <input type="file" id="resume"><br><br>
+        <!-- атрибут name + enctype="multipart/form-data" для завантаження файлів -->
+        <input type="file" id="resume" name="resume" required><br><br>
 
         <label for="color">Улюблений колір:</label>
-        <input type="color" id="color"><br><br>
+        <input type="color" id="color" name="color"><br><br>
 
         <label for="time">Зручний час для навчання:</label>
-        <input type="time" id="time"><br><br>
+        <input type="time" id="time" name="time"><br><br>
 
         <input type="submit" value="Відправити анкету">
       </fieldset>
