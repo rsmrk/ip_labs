@@ -1,0 +1,94 @@
+/* === styles.css (варіант 4) === */
+
+/* Базові стилі */
+:root {
+  --brand: #0055aa;
+  --accent: #00aaff;
+  --dark: #222;
+  --light: #fafafa;
+  --muted: #777;
+  --radius: 8px;
+  --font-sans: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* Контейнер */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Основні секції */
+header {
+  background: var(--brand);
+  color: white;
+  text-align: center;
+  padding: 32px 16px;
+}
+
+/* === Досліджуваний селектор footer.site-footer === */
+footer.site-footer {
+  background: linear-gradient(180deg, var(--dark) 0%, #111 100%);
+  color: #eee;
+  margin-top: 40px;
+  padding: 24px 0;
+  border-top: 4px solid var(--accent);
+}
+
+/* Контент футера */
+footer.site-footer .footer-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+footer.site-footer p {
+  margin: 4px 0;
+}
+
+footer.site-footer .footer-nav {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+footer.site-footer .footer-nav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  transition: background 0.2s;
+}
+
+footer.site-footer .footer-nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+footer.site-footer .copyright {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* Приклад адаптиву */
+@media (max-width: 600px) {
+  footer.site-footer .footer-nav {
+    justify-content: center;
+  }
+  footer.site-footer .footer-nav a {
+    font-size: 0.9rem;
+  }
+}
