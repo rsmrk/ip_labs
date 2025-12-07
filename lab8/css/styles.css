@@ -1,136 +1,153 @@
-/* ====== ГОЛОВНІ СТИЛІ ====== */
+/* ======================
+   styles.css — Виправлений під макет лабораторної
+   ====================== */
 
+/* БАЗОВІ */
+* { box-sizing: border-box; }
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f2f2f2;
+  color: #222;
 }
 
-/* ====== НАВІГАЦІЯ ====== */
-
+/* NAVBAR (темна смуга, меню по центру) */
 .header {
-    background: #333;
-    padding: 10px 0;
+  background: #333;
 }
-
 .navbar {
-    text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 15px;
+  text-align: center;
 }
-
 .menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-
-.menu li {
-    display: inline-block;
-    margin: 0 20px;
-}
-
+.menu li { display: inline-block; margin: 0 16px; }
 .menu li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 20px;
 }
 
-/* ====== ОСНОВНЕ РОЗТАШУВАННЯ ====== */
-
+/* ГОЛОВНИЙ КОНТЕЙНЕР: центрований фіксований контейнер з правою колонкою */
 .layout {
-    width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
-    padding-top: 20px;
+  max-width: 1100px;      /* ширина робочої області — як на макеті */
+  margin: 20px auto;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 0 12px;
 }
 
-/* ====== НОВИНИ ====== */
-
+/* НОВИНИ: займають доступний простір ліворуч */
 .news-area {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+  flex: 1 1 auto;         /* займає весь доступний простір ліворуч */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* дві картки в ряд */
+  gap: 20px;
 }
 
+/* КАРТКА НОВИН — вигляд як у макеті */
 .news-card {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: left;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  background: #fff;
+  padding: 18px;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.01), 0 2px 6px rgba(0,0,0,0.04);
+  text-align: center;   /* на макеті блоки центруються */
+  min-height: 230px;    /* вирівнювання висоти */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
+/* мале квадратне зображення всередині картки (як на макеті) */
 .news-card img {
-    width: 100%;
-    border-radius: 5px;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  display: block;
+  margin: 6px auto 12px auto;
+  border-radius: 3px;
+  background: #ddd;
 }
 
+/* Заголовок — синій і підкреслений */
+.news-card h2 {
+  margin: 6px 0 8px 0;
+  font-size: 18px;
+}
 .news-card h2 a {
-    color: blue;
-    text-decoration: underline;
+  color: #0b45d1;               /* синій */
+  text-decoration: underline;
 }
 
-.date {
-    font-size: 14px;
-    color: #777;
+/* дата і текст як в макеті */
+.news-card .date {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
 }
+.news-card p { margin: 0; color: #333; font-size: 14px; }
 
-/* ====== РЕКЛАМА ====== */
-
+/* ПРАВА КОЛОНКА — реклама */
 .ads {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  width: 220px;            /* фіксована ширина правої колонки — щоб колонка завжди права */
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
+/* Жовті квадратні банери як в макеті */
 .ad-box {
-    background: yellow;
-    padding: 0;
-    border-radius: 8px;
-    height: 220px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: #ffd400;     /* яскравий жовтий */
+  border-radius: 4px;
+  height: 160px;           /* розмір приблизно як на макеті; при потребі змінити на 180/200 */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.ad-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+/* Якщо використовуються картинки всередині ad-box — нехай покривають блок */
+.ad-box img { width: 100%; height: 100%; object-fit: cover; display:block; }
 
-/* ====== АДАПТИВНІСТЬ ====== */
+/* ======================
+   АДАПТИВНІ МЕДІА-ЗАПИТИ
+   ====================== */
 
+/* Звужуємо ширину контейнера на невеликих екранах */
 @media (max-width: 1200px) {
-    .layout {
-        width: 95%;
-    }
+  .layout { max-width: 95%; padding: 0 10px; gap: 18px; }
+  .ads { width: 200px; }
 }
 
-@media (max-width: 900px) {
-    .layout {
-        grid-template-columns: 1fr;
-    }
-
-    .ads {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .ad-box {
-        width: 150px;
-        height: 150px;
-    }
+/* При планшетах — права колонка опускається під новини (щоб не іти занадто вузько) */
+@media (max-width: 920px) {
+  .layout {
+    flex-direction: column;   /* новини над, реклама під ними */
+    align-items: center;
+  }
+  .news-area { width: 100%; grid-template-columns: repeat(2, 1fr); }
+  .ads {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .ad-box { flex: 1 1 0; height: 120px; }
 }
 
+/* На малих телефонах — одна картка в ряд */
 @media (max-width: 600px) {
-    .news-area {
-        grid-template-columns: 1fr;
-    }
-
-    .menu li {
-        display: block;
-        margin: 10px 0;
-    }
+  .news-area { grid-template-columns: 1fr; gap: 14px; }
+  .menu li { display: block; margin: 6px 0; }
+  .ad-box { height: 100px; }
 }
