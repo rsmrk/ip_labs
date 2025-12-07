@@ -1,153 +1,138 @@
 /* ======================
-   styles.css — Виправлений під макет лабораторної
+   RESET
    ====================== */
-
-/* БАЗОВІ */
-* { box-sizing: border-box; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f2f2f2;
-  color: #222;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f2f2;
 }
-
-/* NAVBAR (темна смуга, меню по центру) */
-.header {
-  background: #333;
-}
-.navbar {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 10px 15px;
-  text-align: center;
-}
-.menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.menu li { display: inline-block; margin: 0 16px; }
-.menu li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
-  line-height: 20px;
-}
-
-/* ГОЛОВНИЙ КОНТЕЙНЕР: центрований фіксований контейнер з правою колонкою */
-.layout {
-  max-width: 1100px;      /* ширина робочої області — як на макеті */
-  margin: 20px auto;
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-  padding: 0 12px;
-}
-
-/* НОВИНИ: займають доступний простір ліворуч */
-.news-area {
-  flex: 1 1 auto;         /* займає весь доступний простір ліворуч */
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* дві картки в ряд */
-  gap: 20px;
-}
-
-/* КАРТКА НОВИН — вигляд як у макеті */
-.news-card {
-  background: #fff;
-  padding: 18px;
-  border: 1px solid #e6e6e6;
-  border-radius: 4px;
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.01), 0 2px 6px rgba(0,0,0,0.04);
-  text-align: center;   /* на макеті блоки центруються */
-  min-height: 230px;    /* вирівнювання висоти */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-/* мале квадратне зображення всередині картки (як на макеті) */
-.news-card img {
-  width: 90px;
-  height: 90px;
-  object-fit: cover;
-  display: block;
-  margin: 6px auto 12px auto;
-  border-radius: 3px;
-  background: #ddd;
-}
-
-/* Заголовок — синій і підкреслений */
-.news-card h2 {
-  margin: 6px 0 8px 0;
-  font-size: 18px;
-}
-.news-card h2 a {
-  color: #0b45d1;               /* синій */
-  text-decoration: underline;
-}
-
-/* дата і текст як в макеті */
-.news-card .date {
-  font-size: 13px;
-  color: #666;
-  margin-bottom: 8px;
-}
-.news-card p { margin: 0; color: #333; font-size: 14px; }
-
-/* ПРАВА КОЛОНКА — реклама */
-.ads {
-  width: 220px;            /* фіксована ширина правої колонки — щоб колонка завжди права */
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-/* Жовті квадратні банери як в макеті */
-.ad-box {
-  background: #ffd400;     /* яскравий жовтий */
-  border-radius: 4px;
-  height: 160px;           /* розмір приблизно як на макеті; при потребі змінити на 180/200 */
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-/* Якщо використовуються картинки всередині ad-box — нехай покривають блок */
-.ad-box img { width: 100%; height: 100%; object-fit: cover; display:block; }
 
 /* ======================
-   АДАПТИВНІ МЕДІА-ЗАПИТИ
+   HEADER
    ====================== */
-
-/* Звужуємо ширину контейнера на невеликих екранах */
-@media (max-width: 1200px) {
-  .layout { max-width: 95%; padding: 0 10px; gap: 18px; }
-  .ads { width: 200px; }
+.header {
+    background: #333;
+    padding: 12px 0;
 }
 
-/* При планшетах — права колонка опускається під новини (щоб не іти занадто вузько) */
-@media (max-width: 920px) {
-  .layout {
-    flex-direction: column;   /* новини над, реклама під ними */
-    align-items: center;
-  }
-  .news-area { width: 100%; grid-template-columns: repeat(2, 1fr); }
-  .ads {
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 12px;
-    margin-top: 12px;
-  }
-  .ad-box { flex: 1 1 0; height: 120px; }
+.navbar {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-/* На малих телефонах — одна картка в ряд */
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+    margin: 0 18px;
+}
+
+.menu li a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+/* ======================
+   LAYOUT
+   ====================== */
+.layout {
+    max-width: 1100px;
+    margin: 25px auto;
+    display: flex;
+    gap: 25px;
+    padding: 0 10px;
+    align-items: flex-start;
+}
+
+/* ======================
+   NEWS AREA (2 в ряд)
+   ====================== */
+.news-area {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.news-card {
+    background: white;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    padding: 18px;
+    text-align: center;
+}
+
+.news-card img {
+    width: 90px;
+    height: 90px;
+    background: #ccc;
+    margin-bottom: 10px;
+}
+
+.news-card h2 {
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.news-card h2 a {
+    color: blue;
+    text-decoration: underline;
+}
+
+.date {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* ======================
+   ADS (праворуч)
+   ====================== */
+.ads {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.ad-box {
+    background: #ffd400;
+    height: 180px;
+    border-radius: 4px;
+}
+
+/* ======================
+   ADAPTIVE
+   ====================== */
+@media (max-width: 900px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .ads {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .ad-box {
+        flex: 1;
+        height: 140px;
+    }
+}
+
 @media (max-width: 600px) {
-  .news-area { grid-template-columns: 1fr; gap: 14px; }
-  .menu li { display: block; margin: 6px 0; }
-  .ad-box { height: 100px; }
+    .news-area {
+        grid-template-columns: 1fr;
+    }
+
+    .menu li {
+        display: block;
+        margin: 10px 0;
+    }
 }
