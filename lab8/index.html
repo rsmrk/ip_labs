@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лабораторна робота 8 — Адаптивна верстка</title>
+    <title>Лабораторна робота 8</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -11,11 +11,6 @@
 
 <header class="header">
     <nav class="navbar">
-        <div class="brand"><a href="#">Labs</a></div>
-
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">&#9776;</label>
-
         <ul class="menu">
             <li><a href="#">Головна</a></li>
             <li><a href="#">Новини</a></li>
@@ -25,121 +20,70 @@
     </nav>
 </header>
 
+<div class="layout">
 
-<div class="container">
+    <main class="news-area">
 
-    <!-- НОВИНИ -->
-    <main class="news-grid">
+        <!-- КАРТКИ НОВИН (зроблено 6 для прикладу, ти можеш додати більше) -->
 
-        <!-- 12 новинних карток -->
-        <!-- Можеш замінити текст на свій — структура вже готова -->
-
-        <!-- 1 -->
-        <article class="news-item">
+        <article class="news-card">
             <img src="placeholder.svg" alt="Новина">
-            <h2>Заголовок новини 1</h2>
-            <p class="date">2024-11-01</p>
-            <p>Короткий опис першої новини. Lorem ipsum dolor sit amet.</p>
+            <h2><a href="#">Заголовок новини 1</a></h2>
+            <p class="date">Дата публікації: 2024-11-01</p>
+            <p>Лід тексту: Lorem ipsum dolor sit amet...</p>
         </article>
 
-        <!-- 2 -->
-        <article class="news-item">
+        <article class="news-card">
             <img src="placeholder.svg" alt="Новина">
-            <h2>Заголовок новини 2</h2>
-            <p class="date">2024-11-02</p>
-            <p>Короткий опис новини. Lorem ipsum dolor sit amet.</p>
+            <h2><a href="#">Заголовок новини 2</a></h2>
+            <p class="date">Дата публікації: 2024-11-02</p>
+            <p>Лід тексту: Lorem ipsum dolor sit amet...</p>
         </article>
 
-        <!-- 3 -->
-        <article class="news-item">
+        <article class="news-card">
             <img src="placeholder.svg" alt="Новина">
-            <h2>Заголовок новини 3</h2>
-            <p class="date">2024-11-03</p>
-            <p>Короткий опис новини.</p>
+            <h2><a href="#">Заголовок новини 3</a></h2>
+            <p class="date">Дата публікації: 2024-11-03</p>
+            <p>Лід тексту: Lorem ipsum dolor sit amet...</p>
         </article>
 
-        <!-- 4–12 (я залишаю їх повністю, щоб у тебе було все як у завданні) -->
-        <article class="news-item">
+        <article class="news-card">
             <img src="placeholder.svg" alt="Новина">
-            <h2>Заголовок новини 4</h2>
-            <p class="date">2024-11-04</p>
-            <p>Короткий опис.</p>
+            <h2><a href="#">Заголовок новини 4</a></h2>
+            <p class="date">Дата публікації: 2024-11-04</p>
+            <p>Лід тексту: Lorem ipsum dolor sit amet...</p>
         </article>
 
-        <article class="news-item">
+        <article class="news-card">
             <img src="placeholder.svg" alt="Новина">
-            <h2>Заголовок новини 5</h2>
-            <p class="date">2024-11-05</p>
-            <p>Короткий опис.</p>
+            <h2><a href="#">Заголовок новини 5</a></h2>
+            <p class="date">Дата публікації: 2024-11-05</p>
+            <p>Лід тексту: Lorem ipsum dolor sit amet...</p>
         </article>
 
-        <article class="news-item">
+        <article class="news-card">
             <img src="placeholder.svg" alt="Новина">
-            <h2>Заголовок новини 6</h2>
-            <p class="date">2024-11-06</p>
-            <p>Короткий опис.</p>
-        </article>
-
-        <article class="news-item">
-            <img src="placeholder.svg" alt="Новина">
-            <h2>Заголовок новини 7</h2>
-            <p class="date">2024-11-07</p>
-            <p>Короткий опис.</p>
-        </article>
-
-        <article class="news-item">
-            <img src="placeholder.svg" alt="Новина">
-            <h2>Заголовок новини 8</h2>
-            <p class="date">2024-11-08</p>
-            <p>Короткий опис.</p>
-        </article>
-
-        <article class="news-item">
-            <img src="placeholder.svg" alt="Новина">
-            <h2>Заголовок новини 9</h2>
-            <p class="date">2024-11-09</p>
-            <p>Короткий опис.</p>
-        </article>
-
-        <article class="news-item">
-            <img src="placeholder.svg" alt="Новина">
-            <h2>Заголовок новини 10</h2>
-            <p class="date">2024-11-10</p>
-            <p>Короткий опис.</p>
-        </article>
-
-        <article class="news-item">
-            <img src="placeholder.svg" alt="Новина">
-            <h2>Заголовок новини 11</h2>
-            <p class="date">2024-11-11</p>
-            <p>Короткий опис.</p>
-        </article>
-
-        <article class="news-item">
-            <img src="placeholder.svg" alt="Новина">
-            <h2>Заголовок новини 12</h2>
-            <p class="date">2024-11-12</p>
-            <p>Короткий опис.</p>
+            <h2><a href="#">Заголовок новини 6</a></h2>
+            <p class="date">Дата публікації: 2024-11-06</p>
+            <p>Лід тексту: Lorem ipsum dolor sit amet...</p>
         </article>
 
     </main>
 
-    <!-- РЕКЛАМА -->
-    <aside class="aside-ad">
+    <!-- ПРАВА КОЛОНКА З РЕКЛАМОЮ -->
 
-        <div class="ad-item">
+    <aside class="ads">
+
+        <div class="ad-box">
             <img src="placeholder-ad.svg" alt="Реклама 1">
-            <p>Рекламний блок 1</p>
         </div>
 
-        <div class="ad-item">
+        <div class="ad-box">
             <img src="placeholder-ad.svg" alt="Реклама 2">
-            <p>Рекламний блок 2</p>
         </div>
 
-        <div class="ad-item">
+        <div class="ad-box">
             <img src="placeholder-ad.svg" alt="Реклама 3">
-            <p>Рекламний блок 3</p>
         </div>
 
     </aside>

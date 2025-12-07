@@ -1,91 +1,74 @@
-/* БАЗОВІ СТИЛІ */
+/* ====== ГОЛОВНІ СТИЛІ ====== */
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f7f7f7;
+    background: #f2f2f2;
 }
 
-/* -------------------- */
-/* HEADER + NAVBAR      */
-/* -------------------- */
+/* ====== НАВІГАЦІЯ ====== */
 
 .header {
     background: #333;
-    color: white;
     padding: 10px 0;
 }
 
 .navbar {
-    width: 90%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.brand a {
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
+    text-align: center;
 }
 
 .menu {
-    display: flex;
-    gap: 20px;
     list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+    margin: 0 20px;
 }
 
 .menu li a {
-    text-decoration: none;
     color: white;
+    text-decoration: none;
     font-size: 18px;
 }
 
-.menu-toggle {
-    display: none;
-}
+/* ====== ОСНОВНЕ РОЗТАШУВАННЯ ====== */
 
-.menu-icon {
-    display: none;
-    font-size: 26px;
-    cursor: pointer;
-    color: white;
-}
-
-/* -------------------- */
-/* КОНТЕЙНЕР            */
-/* -------------------- */
-
-.container {
-    width: 90%;
-    margin: 20px auto;
+.layout {
+    width: 1200px;
+    margin: auto;
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 20px;
+    padding-top: 20px;
 }
 
-/* -------------------- */
-/* СЕКЦІЯ НОВИН         */
-/* -------------------- */
+/* ====== НОВИНИ ====== */
 
-.news-grid {
+.news-area {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
 }
 
-.news-item {
+.news-card {
     background: white;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    text-align: left;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
-.news-item img {
+.news-card img {
     width: 100%;
-    border-radius: 6px;
+    border-radius: 5px;
+}
+
+.news-card h2 a {
+    color: blue;
+    text-decoration: underline;
 }
 
 .date {
@@ -93,67 +76,61 @@ body {
     color: #777;
 }
 
-/* -------------------- */
-/* РЕКЛАМА              */
-/* -------------------- */
+/* ====== РЕКЛАМА ====== */
 
-.aside-ad {
+.ads {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.ad-item {
-    background: white;
-    padding: 10px;
+.ad-box {
+    background: yellow;
+    padding: 0;
     border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.ad-item img {
+.ad-box img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* -------------------- */
-/* АДАПТИВНІСТЬ         */
-/* -------------------- */
+/* ====== АДАПТИВНІСТЬ ====== */
 
-/* планшети */
-@media (max-width: 992px) {
-    .news-grid {
-        grid-template-columns: repeat(2, 1fr);
+@media (max-width: 1200px) {
+    .layout {
+        width: 95%;
     }
 }
 
-/* мобільні */
-@media (max-width: 768px) {
-
-    .container {
+@media (max-width: 900px) {
+    .layout {
         grid-template-columns: 1fr;
     }
 
-    .news-grid {
-        grid-template-columns: 1fr;
+    .ads {
+        flex-direction: row;
+        justify-content: center;
     }
 
-    .menu {
-        display: none;
-        flex-direction: column;
-        background: #333;
-        padding: 15px;
-        border-radius: 0 0 8px 8px;
+    .ad-box {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 600px) {
+    .news-area {
+        grid-template-columns: 1fr;
     }
 
     .menu li {
-        margin-bottom: 10px;
-    }
-
-    .menu-icon {
         display: block;
-    }
-
-    .menu-toggle:checked + .menu-icon + .menu {
-        display: flex;
+        margin: 10px 0;
     }
 }
