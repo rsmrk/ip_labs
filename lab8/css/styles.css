@@ -1,0 +1,159 @@
+/* БАЗОВІ СТИЛІ */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+}
+
+/* -------------------- */
+/* HEADER + NAVBAR      */
+/* -------------------- */
+
+.header {
+    background: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+.navbar {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand a {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: white;
+}
+
+/* -------------------- */
+/* КОНТЕЙНЕР            */
+/* -------------------- */
+
+.container {
+    width: 90%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+}
+
+/* -------------------- */
+/* СЕКЦІЯ НОВИН         */
+/* -------------------- */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.news-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+.news-item img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.date {
+    font-size: 14px;
+    color: #777;
+}
+
+/* -------------------- */
+/* РЕКЛАМА              */
+/* -------------------- */
+
+.aside-ad {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ad-item {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+.ad-item img {
+    width: 100%;
+}
+
+/* -------------------- */
+/* АДАПТИВНІСТЬ         */
+/* -------------------- */
+
+/* планшети */
+@media (max-width: 992px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* мобільні */
+@media (max-width: 768px) {
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: #333;
+        padding: 15px;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .menu li {
+        margin-bottom: 10px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+    }
+}
