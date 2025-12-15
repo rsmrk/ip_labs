@@ -1,0 +1,29 @@
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .content-wrapper {
+    flex-direction: row;
+  }
+}
+
+main .news-grid {
+  display: grid;
+  gap: 10px;
+}
+@media (min-width: 576px) {
+  main .news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 768px) {
+  main .news-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1024px) {
+  main .news-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
