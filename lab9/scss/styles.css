@@ -1,29 +1,70 @@
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-@media (min-width: 768px) {
-  .content-wrapper {
-    flex-direction: row;
-  }
+@charset "UTF-8";
+/* ===== ЗМІННІ ===== */
+/* ===== МІКСИНИ ===== */
+/* ===== БАЗОВІ СТИЛІ ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
-main .news-grid {
+/* ===== HEADER ===== */
+.header {
+  background-color: #252775;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+.header h1 {
+  margin: 0;
+}
+.header p {
+  margin-top: 0.5rem;
+}
+
+/* ===== MAIN GRID ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
   display: grid;
-  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
-@media (min-width: 576px) {
-  main .news-grid {
+
+/* ===== CARD ===== */
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+.card h2 {
+  color: #252775;
+}
+.card img {
+  max-width: 100%;
+  margin-top: 1rem;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #252775;
+  color: #fff;
+  padding: 1rem;
+}
+
+/* ===== АДАПТИВНІСТЬ ===== */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .container {
     grid-template-columns: 1fr;
-  }
-}
-@media (min-width: 768px) {
-  main .news-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (min-width: 1024px) {
-  main .news-grid {
-    grid-template-columns: repeat(4, 1fr);
   }
 }
