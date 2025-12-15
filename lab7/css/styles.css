@@ -1,140 +1,76 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #e9eef3;
+  color: #333;
 }
 
-header {
-    text-align: center;
-    background: #4CAF50;
-    color: white;
-    padding: 10px 0;
-    position: sticky; /* фіксація при прокрутці */
-    top: 0;
-    z-index: 1000; /* поверх усього */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+#events_container {
+  background-color: #395ca5;
+  color: #fff;
+  padding: 30px;
+  text-align: center;
 }
 
-section {
-    padding: 20px;
+#events_container h1 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-h2 {
-    position: sticky;
-    top: 48px; /* щоб не залазило під header */
-    background: #f9f9f9;
-    padding: 10px 0;
-    margin: 0;
-    z-index: 500;
-    border-bottom: 1px solid #ddd;
+.events {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-/* ------------------------
-    Секція 1 — Float
-------------------------- */
-#section-1 img {
-    float: left;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    width: 250px;
-    height: 250px;
+.event {
+  background-color: #5f84d8;
+  border-radius: 10px;
+  width: 240px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
 }
 
-.text {
-    text-align: justify;
+.event:hover {
+  transform: translateY(-5px);
 }
 
-.clear {
-    clear: both;
+.event img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 3px solid #2f4d91;
 }
 
-/* ------------------------
-    Секція 2 — Multicolumn
-------------------------- */
-.multicolumn-text {
-    column-width: 300px;
-    column-gap: 20px;
-    text-align: justify;
+.event-date {
+  background-color: #2f4d91;
+  padding: 8px;
+  font-size: 14px;
 }
 
-/* Планшети (до 1024px) — 2 колонки */
-@media (max-width: 1024px) {
-    .multicolumn-text {
-        column-count: 2;
-        column-width: auto;
-    }
+.event-info {
+  padding: 10px 15px 15px;
 }
 
-/* Телефони (до 768px) — 1 колонка */
-@media (max-width: 768px) {
-    .multicolumn-text {
-        column-count: 1;
-        column-width: auto;
-    }
+.event-info h2 {
+  font-size: 16px;
+  color: #fff;
+  margin: 5px 0;
 }
 
-/* ------------------------
-    Секція 3 — Modal Window
-------------------------- */
-#subscribe-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
+.event-info p {
+  font-size: 14px;
+  color: #e0e0e0;
+  margin: 0;
 }
 
-#subscribe-button:hover {
-    background-color: #45a049;
-}
-
-/* Модальне вікно приховано */
-#modal.hidden {
-    display: none;
-}
-
-#modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    z-index: 2000; /* поверх усього */
-}
-
-.modal-content {
-    background: white;
-    width: 50%;
-    height: 50%;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-input[type="email"] {
-    padding: 10px;
-    width: 80%;
-    margin: 10px auto;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-
-button[type="submit"] {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
+footer {
+  background-color: #19386b;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
 }

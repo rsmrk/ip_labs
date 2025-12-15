@@ -1,36 +1,68 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лабораторна робота №7: CSS Flexbox (Варіант 4)</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Події Львівської Політехніки</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <header id="events_container">
-        <div class="event-item">
-            <span class="tag">Увага!</span> 
-            <span>День відкритих дверей 20.01.2026.</span>
+  <header id="events_container">
+    <h1>Незабаром у Львівській політехніці</h1>
+
+    <div class="events">
+
+      <div class="event">
+        <img src="event1.jpg" alt="Подія 1">
+        <div class="event-date">
+          <p>пн., 27 жовт. – пн., 17 листоп.</p>
         </div>
-
-        <div class="event-item">
-            <span class="tag important">Новина:</span> 
-            <span>Оголошено результати наукового конкурсу.</span>
+        <div class="event-info">
+          <h2>Персональна виставка Ігоря Грицая</h2>
+          <p>У Музеї історії Львівської політехніки.</p>
         </div>
+      </div>
 
-        <div class="event-item">
-            <span class="tag">Оголошення:</span> 
-            <span>Терміни оплати за навчання.</span>
+      <div class="event">
+        <img src="event2.jpg" alt="Подія 2">
+        <div class="event-date">
+          <p>чт., 6 листоп. – пт., 7 листоп.</p>
         </div>
+        <div class="event-info">
+          <h2>V Міжнародна конференція</h2>
+          <p>«Сучасні тренди в поведінковому маркетингу».</p>
+        </div>
+      </div>
 
-        <a href="#" class="more-link">Детальніше про події »</a>
-    </header>
+      <div class="event">
+        <img src="event3.jpg" alt="Подія 3">
+        <div class="event-date">
+          <p>ср., 12 листоп., 10:00</p>
+        </div>
+        <div class="event-info">
+          <h2>Ярмарок кар’єри 2025</h2>
+          <p>Нові можливості для професійного старту студентів.</p>
+        </div>
+      </div>
 
-    <main>
-        <h1>Головна сторінка</h1>
-        <p>Блок сповіщень (header#events_container) зверстано за допомогою Flexbox.</p>
-    </main>
+      <div class="event">
+        <img src="event4.jpg" alt="Подія 4">
+        <div class="event-date">
+          <p>пт., 14 листоп., 14:10</p>
+        </div>
+        <div class="event-info">
+          <h2>Стипендіальна програма «Завтра.UA»</h2>
+          <p>Презентація програми навчального року 2025/2026.</p>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <footer>
+    <p>&copy; 2025 Львівська Політехніка</p>
+  </footer>
 
 </body>
 </html>
