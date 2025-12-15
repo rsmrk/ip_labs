@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Практична робота №1</title>
+</head>
+<body>
+
+<h2>Практична робота №1</h2>
+<p><b>Тема:</b> Створення карти зображень та таблиць</p>
+
+<hr>
+
+<h3>1. Карта зображення (варіант 2)</h3>
+<p>На зображенні нижче зроблено клікабельні області, які ведуть до навчальних матеріалів з різних тем.</p>
+
+<img src="images/v2.png" alt="Web-технології" usemap="#webmap" width="346" height="360">
+
+<map name="webmap">
+  <!-- CSS -->
+  <area shape="poly" coords="173,10,270,70,225,160,120,160,75,70" 
+        href="https://developer.mozilla.org/en-US/docs/Learn/CSS" 
+        alt="CSS" title="CSS">
+
+  <!-- HTTP -->
+  <area shape="poly" coords="270,70,330,160,225,160" 
+        href="https://developer.mozilla.org/en-US/docs/Web/HTTP" 
+        alt="HTTP" title="HTTP">
+
+  <!-- HTML -->
+  <area shape="poly" coords="225,160,330,160,260,260,173,320,173,160" 
+        href="https://developer.mozilla.org/en-US/docs/Web/HTML" 
+        alt="HTML" title="HTML">
+
+  <!-- JavaScript -->
+  <area shape="poly" coords="173,320,85,260,120,160,173,160" 
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" 
+        alt="JavaScript" title="JavaScript">
+
+  <!-- Web APIs -->
+  <area shape="poly" coords="75,70,120,160,85,260,20,160" 
+        href="https://developer.mozilla.org/en-US/docs/Web/API" 
+        alt="Web APIs" title="Web APIs">
+</map>
+
+<p><i>Порада:</i> Наведи курсор на частину фігури — побачиш підказку, а при натисканні відкриється сторінка з відповідною темою.</p>
+
+<hr>
+
+<h3>2. Таблиця (варіант 12)</h3>
+
+<table border="1" cellspacing="0" cellpadding="5">
+  <caption><b>Таблиця 12. Курси з Web-технологій</b></caption>
+  <tr>
+    <th rowspan="2">Категорія</th>
+    <th>Назва курсу</th>
+    <th>Платформа</th>
+    <th rowspan="2">Тривалість</th>
+  </tr>
+  <tr>
+    <th colspan="2">Деталі</th>
+  </tr>
+  <tr>
+    <td>HTML / CSS</td>
+    <td>Основи HTML та CSS</td>
+    <td>FreeCodeCamp</td>
+    <td>10 год</td>
+  </tr>
+  <tr>
+    <td>HTTP</td>
+    <td>Вступ до мережі</td>
+    <td>MDN</td>
+    <td>8 год</td>
+  </tr>
+  <tr>
+    <td>JavaScript</td>
+    <td colspan="2">Базовий курс для початківців</td>
+    <td>12 год</td>
+  </tr>
+</table>
+
+
+</body>
+</html>
