@@ -1,84 +1,212 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <title>Практична робота №1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №2 - Варіант 4</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<h2>Практична робота №1</h2>
-<p><b>Тема:</b> Створення карти зображень та таблиць</p>
+    <header class="header">
+        <div class="header__top">
+            <div class="header__logo-wrapper">
+                <img src="logo-lit.jpg" alt="Логотип Львівської Політехніки" class="header__logo">
+                <div class="header__title-box">
+                    <span class="header__univ-name">НАЦІОНАЛЬНИЙ УНІВЕРСИТЕТ</span>
+                    <span class="header__univ-name header__univ-name--highlight">«ЛЬВІВСЬКА ПОЛІТЕХНІКА»</span>
+                </div>
+            </div>
+            <div class="header__actions">
+                <nav class="lang-menu">
+                    <ul class="lang-menu__list">
+                        <li class="lang-menu__item"><a href="#" class="lang-menu__link lang-menu__link--active">UK</a></li>
+                        <li class="lang-menu__item"><a href="#" class="lang-menu__link">EN</a></li>
+                        <li class="lang-menu__item"><a href="#" class="lang-menu__link">DE</a></li>
+                        <li class="lang-menu__item"><a href="#" class="lang-menu__link">PL</a></li>
+                    </ul>
+                </nav>
+                <form class="search-form">
+                    <input type="text" class="search-form__input" placeholder="Search">
+                    <button class="search-form__button">Q</button>
+                </form>
+            </div>
+        </div>
 
-<hr>
+        <nav class="main-nav">
+            <ul class="main-nav__list">
+                <li class="main-nav__item"><a href="#" class="main-nav__link">Політехніка</a></li>
+                <li class="main-nav__item"><a href="#" class="main-nav__link">Інститути</a></li>
+                <li class="main-nav__item"><a href="#" class="main-nav__link">Освіта</a></li>
+                <li class="main-nav__item"><a href="#" class="main-nav__link">Наука</a></li>
+                <li class="main-nav__item"><a href="#" class="main-nav__link">Проєкти</a></li>
+                <li class="main-nav__item"><a href="#" class="main-nav__link">Вступнику</a></li>
+                <li class="main-nav__item"><a href="#" class="main-nav__link">Студенту</a></li>
+            </ul>
+        </nav>
 
-<h3>1. Карта зображення (варіант 2)</h3>
-<p>На зображенні нижче зроблено клікабельні області, які ведуть до навчальних матеріалів з різних тем.</p>
+        <section id="events_container" class="upcoming-events">
+            <h2 class="upcoming-events__heading">Незабаром у Львівській політехніці</h2>
+            
+            <div class="upcoming-events__grid">
+                <article class="event-card">
+                    <div class="event-card__image-wrapper">
+                        <img src="event1.jpg" onerror="this.src='https://via.placeholder.com/300x200'" alt="Подія 1" class="event-card__img">
+                    </div>
+                    <div class="event-card__info">
+                        <div class="event-card__date">чт., 27 листоп., 10:00 – пт., 28 листоп., 18:00</div>
+                        <h3 class="event-card__title">III Міжнародна студентська конференція «Належні рішення для прогалин у фармації»</h3>
+                    </div>
+                </article>
+                <article class="event-card">
+                    <div class="event-card__image-wrapper">
+                        <img src="event2.jpg" onerror="this.src='https://via.placeholder.com/300x200'" alt="Подія 2" class="event-card__img">
+                    </div>
+                    <div class="event-card__info">
+                        <div class="event-card__date">пт., 28 листоп., 10:00</div>
+                        <h3 class="event-card__title">Сьома Міжнародна конференція «Сучасний конституціоналізм та євроінтеграція»</h3>
+                    </div>
+                </article>
+                <article class="event-card">
+                    <div class="event-card__image-wrapper">
+                        <img src="event3.jpg" onerror="this.src='https://via.placeholder.com/300x200'" alt="Подія 3" class="event-card__img">
+                    </div>
+                    <div class="event-card__info">
+                        <div class="event-card__date">пт., 28 листоп., 17:00</div>
+                        <h3 class="event-card__title">Засідання євроклубу EU for YOU з питань глобального кліматичного лідерства ЄС</h3>
+                    </div>
+                </article>
+                <article class="event-card">
+                    <div class="event-card__image-wrapper">
+                        <img src="event4.jpg" onerror="this.src='https://via.placeholder.com/300x200'" alt="Подія 4" class="event-card__img">
+                    </div>
+                    <div class="event-card__info">
+                        <div class="event-card__date">ср., 3 груд., 09:00</div>
+                        <h3 class="event-card__title">Міжнародний гуманітарний дискурс у Львові: презентація Івана Штурма</h3>
+                    </div>
+                </article>
+                <article class="event-card">
+                    <div class="event-card__image-wrapper">
+                        <img src="event5.jpg" onerror="this.src='https://via.placeholder.com/300x200'" alt="Подія 5" class="event-card__img">
+                    </div>
+                    <div class="event-card__info">
+                        <div class="event-card__date">чт., 4 груд., 09:00 – сб., 6 груд., 18:00</div>
+                        <h3 class="event-card__title">Семінар-практикум «Планування та фінансування у закладах вищої освіти»</h3>
+                    </div>
+                </article>
+                <article class="event-card">
+                    <div class="event-card__image-wrapper">
+                        <img src="event6.jpg" onerror="this.src='https://via.placeholder.com/300x200'" alt="Подія 6" class="event-card__img">
+                    </div>
+                    <div class="event-card__info">
+                        <div class="event-card__date">пт., 5 груд., 10:00</div>
+                        <h3 class="event-card__title">XVII Всеукраїнська наукова конференція «Влада і права людини в умовах війни»</h3>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </header>
 
-<img src="images/v2.png" alt="Web-технології" usemap="#webmap" width="346" height="360">
+    <main>
+        <section class="news">
+            <h2 class="news__heading">Новини університету</h2>
+            <div class="news__grid">
+                
+                <article class="news-card">
+                    <img src="news1.jpg" onerror="this.src='https://via.placeholder.com/300x200'" alt="Новина 1" class="news-card__image">
+                    <div class="news-card__content">
+                        <span class="news-card__date">27 ЛИСТОП. 2025, 17:07</span>
+                        <h3 class="news-card__title"><a href="#" class="news-card__link">В Університеті провадять опитування «Викладач очима студентів»</a></h3>
+                    </div>
+                </article>
 
-<map name="webmap">
-  <!-- CSS -->
-  <area shape="poly" coords="173,10,270,70,225,160,120,160,75,70" 
-        href="https://developer.mozilla.org/en-US/docs/Learn/CSS" 
-        alt="CSS" title="CSS">
+                <article class="news-card">
+                    <img src="news2.jpg" onerror="this.src='https://via.placeholder.com/300x200'" alt="Новина 2" class="news-card__image">
+                    <div class="news-card__content">
+                        <span class="news-card__date">27 ЛИСТОП. 2025, 15:57</span>
+                        <h3 class="news-card__title"><a href="#" class="news-card__link">Конкурс на здобуття індивідуальних стипендій від Фундації Лозинських</a></h3>
+                    </div>
+                </article>
 
-  <!-- HTTP -->
-  <area shape="poly" coords="270,70,330,160,225,160" 
-        href="https://developer.mozilla.org/en-US/docs/Web/HTTP" 
-        alt="HTTP" title="HTTP">
+                <article class="news-card">
+                    <img src="news3.jpg" onerror="this.src='https://via.placeholder.com/300x200'" alt="Новина 3" class="news-card__image">
+                    <div class="news-card__content">
+                        <span class="news-card__date">27 ЛИСТОП. 2025, 14:38</span>
+                        <h3 class="news-card__title"><a href="#" class="news-card__link">Перші. Жінка в дипломатії: виклик чи місія?</a></h3>
+                    </div>
+                </article>
 
-  <!-- HTML -->
-  <area shape="poly" coords="225,160,330,160,260,260,173,320,173,160" 
-        href="https://developer.mozilla.org/en-US/docs/Web/HTML" 
-        alt="HTML" title="HTML">
+                <article class="news-card">
+                    <img src="news4.jpg" onerror="this.src='https://via.placeholder.com/300x200'" alt="Новина 4" class="news-card__image">
+                    <div class="news-card__content">
+                        <span class="news-card__date">27 ЛИСТОП. 2025, 12:21</span>
+                        <h3 class="news-card__title"><a href="#" class="news-card__link">Студенти ІКТЕ здобули перемогу у конкурсі Huawei</a></h3>
+                    </div>
+                </article>
 
-  <!-- JavaScript -->
-  <area shape="poly" coords="173,320,85,260,120,160,173,160" 
-        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" 
-        alt="JavaScript" title="JavaScript">
+                <article class="news-card">
+                    <img src="news5.jpg" onerror="this.src='https://via.placeholder.com/300x200'" alt="Новина 5" class="news-card__image">
+                    <div class="news-card__content">
+                        <span class="news-card__date">27 ЛИСТОП. 2025, 09:07</span>
+                        <h3 class="news-card__title"><a href="#" class="news-card__link">Асистентка кафедри будівельного виробництва Оксана Рихліцька про бетон</a></h3>
+                    </div>
+                </article>
 
-  <!-- Web APIs -->
-  <area shape="poly" coords="75,70,120,160,85,260,20,160" 
-        href="https://developer.mozilla.org/en-US/docs/Web/API" 
-        alt="Web APIs" title="Web APIs">
-</map>
+                <article class="news-card">
+                    <img src="news6.jpg" onerror="this.src='https://via.placeholder.com/300x200'" alt="Новина 6" class="news-card__image">
+                    <div class="news-card__content">
+                        <span class="news-card__date">26 ЛИСТОП. 2025, 17:04</span>
+                        <h3 class="news-card__title"><a href="#" class="news-card__link">Міжнародна наукова конференція Safe, Sustainable, and Swift Reconstruction</a></h3>
+                    </div>
+                </article>
 
-<p><i>Порада:</i> Наведи курсор на частину фігури — побачиш підказку, а при натисканні відкриється сторінка з відповідною темою.</p>
+                <article class="news-card">
+                    <img src="news7.jpg" onerror="this.src='https://via.placeholder.com/300x200'" alt="Новина 7" class="news-card__image">
+                    <div class="news-card__content">
+                        <span class="news-card__date">26 ЛИСТОП. 2025, 16:12</span>
+                        <h3 class="news-card__title"><a href="#" class="news-card__link">Засідання євроклубу EU for YOU з питань кліматичного лідерства</a></h3>
+                    </div>
+                </article>
 
-<hr>
+                <article class="news-card">
+                    <img src="news8.jpg" onerror="this.src='https://via.placeholder.com/300x200'" alt="Новина 8" class="news-card__image">
+                    <div class="news-card__content">
+                        <span class="news-card__date">26 ЛИСТОП. 2025, 14:53</span>
+                        <h3 class="news-card__title"><a href="#" class="news-card__link">27 політехніків одержуватимуть стипендію Кабінету Міністрів України</a></h3>
+                    </div>
+                </article>
 
-<h3>2. Таблиця (варіант 12)</h3>
+            </div>
+        </section>
+    </main>
 
-<table border="1" cellspacing="0" cellpadding="5">
-  <caption><b>Таблиця 12. Курси з Web-технологій</b></caption>
-  <tr>
-    <th rowspan="2">Категорія</th>
-    <th>Назва курсу</th>
-    <th>Платформа</th>
-    <th rowspan="2">Тривалість</th>
-  </tr>
-  <tr>
-    <th colspan="2">Деталі</th>
-  </tr>
-  <tr>
-    <td>HTML / CSS</td>
-    <td>Основи HTML та CSS</td>
-    <td>FreeCodeCamp</td>
-    <td>10 год</td>
-  </tr>
-  <tr>
-    <td>HTTP</td>
-    <td>Вступ до мережі</td>
-    <td>MDN</td>
-    <td>8 год</td>
-  </tr>
-  <tr>
-    <td>JavaScript</td>
-    <td colspan="2">Базовий курс для початківців</td>
-    <td>12 год</td>
-  </tr>
-</table>
-
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__column">
+                <h3 class="footer__title">Громадські організації</h3>
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="#" class="footer__link">Товариство «Просвіта»</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Профспілка працівників</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Колегія студентів</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h3 class="footer__title">Зворотний зв'язок</h3>
+                <ul class="footer__list">
+                    <li class="footer__item footer__item--strong">Телефони гарячої лінії</li>
+                    <li class="footer__item">coffice@lpnu.ua</li>
+                    <li class="footer__item">com.centre@lpnu.ua</li>
+                    <li class="footer__item">+38 032 258-22-82</li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h3 class="footer__title">Про сайт</h3>
+                <p class="footer__text">Офіційний веб-сайт Національного університету «Львівська політехніка».</p>
+                <p class="footer__copyright">© 2005-2025.</p>
+                <div class="footer__cert">ISO 9001:2015</div>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>

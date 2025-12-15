@@ -1,0 +1,223 @@
+:root {
+    --primary-color: #003366; 
+    --accent-color: #007cc2;
+    --text-color: #333;
+    --white: #ffffff;
+    --light-bg: #f9f9f9;
+    --gray-border: #ddd;
+    --dark-blue: #2b3080;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+a { text-decoration: none; color: inherit; transition: color 0.2s; }
+ul { list-style: none; padding: 0; margin: 0; }
+h1, h2, h3, p { margin: 0; }
+
+/* --- HEADER --- */
+.header { background: var(--white); }
+
+.header__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--gray-border);
+    flex-wrap: wrap; 
+}
+
+.header__logo-wrapper { display: flex; align-items: center; gap: 15px; }
+.header__logo { height: 60px; }
+.header__title-box { display: flex; flex-direction: column; }
+.header__univ-name { font-size: 14px; font-weight: bold; color: var(--primary-color); text-transform: uppercase; }
+.header__univ-name--highlight { background-color: var(--primary-color); color: var(--white); padding: 0 5px; width: fit-content;}
+
+.header__actions { display: flex; align-items: center; gap: 20px; }
+.lang-menu__list { display: flex; gap: 10px; font-weight: bold; color: #888; font-size: 14px; }
+.lang-menu__link--active { color: var(--primary-color); }
+
+.search-form { display: flex; }
+.search-form__input { padding: 5px 10px; border: 1px solid var(--gray-border); border-right: none; }
+.search-form__button { background-color: var(--accent-color); color: var(--white); border: none; padding: 5px 15px; cursor: pointer; }
+
+.main-nav { background-color: #f0f0f0; border-bottom: 1px solid var(--gray-border); }
+.main-nav__list { display: flex; justify-content: center; flex-wrap: wrap; }
+.main-nav__link { display: block; padding: 12px 15px; color: #555; font-weight: 600; }
+.main-nav__link:hover { background-color: #e0e0e0; color: var(--primary-color); }
+
+/* --- HEADER HERO (Варіант 4: Незабаром...) --- */
+#events_container {
+    background-color: var(--dark-blue);
+    padding: 40px 20px;
+    color: var(--white);
+}
+
+.upcoming-events__heading {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+
+.upcoming-events__grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 15px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.event-card {
+    background-color: var(--white);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.event-card__image-wrapper {
+    height: 120px;
+    overflow: hidden;
+}
+
+.event-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-card__info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.event-card__date {
+    color: #5a87c5; 
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 8px;
+}
+
+.event-card__title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--primary-color);
+}
+
+/* --- СЕКЦІЯ НОВИН (8 ШТУК) --- */
+.news {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--white);
+}
+
+.news__heading {
+    text-align: center;
+    color: var(--accent-color);
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.news__grid {
+    display: grid;
+    gap: 20px;
+}
+
+.news-card {
+    background: var(--white);
+    border: 1px solid #eee;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.news-card__image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.news-card__content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card__date {
+    background-color: #666;
+    color: var(--white);
+    font-size: 11px;
+    padding: 3px 6px;
+    text-transform: uppercase;
+    width: fit-content;
+    margin-top: -30px; 
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.news-card__title {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.news-card__link {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+.news-card__link:hover { text-decoration: underline; }
+
+/* --- FOOTER --- */
+.footer { background-color: var(--light-bg); padding: 40px 20px; border-top: 1px solid var(--gray-border); font-size: 0.9rem; }
+.footer__container { display: grid; gap: 30px; max-width: 1200px; margin: 0 auto; }
+.footer__title { color: var(--text-color); margin-bottom: 15px; font-size: 1.2rem; }
+.footer__item { margin-bottom: 8px; }
+.footer__item--strong { font-weight: bold; margin-bottom: 10px; display: block; }
+.footer__link { color: var(--accent-color); }
+.footer__link:hover { text-decoration: underline; }
+
+/* --- АДАПТИВНІСТЬ --- */
+@media screen and (max-width: 767px) {
+    .header__top { flex-direction: column; align-items: flex-start; gap: 15px; }
+    .header__actions { width: 100%; justify-content: space-between; }
+    .main-nav__list { flex-direction: column; }
+    .main-nav__link { width: 100%; box-sizing: border-box; }
+    
+    .upcoming-events__grid { grid-template-columns: 1fr; }
+    .news__grid { grid-template-columns: 1fr; }
+    .footer__container { grid-template-columns: 1fr; }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .upcoming-events__grid { grid-template-columns: repeat(3, 1fr); }
+    .news__grid { grid-template-columns: repeat(2, 1fr); }
+    .footer__container { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media screen and (min-width: 1024px) {
+    .upcoming-events__grid { grid-template-columns: repeat(6, 1fr); }
+    .news__grid { grid-template-columns: repeat(4, 1fr); }
+    .footer__container { grid-template-columns: repeat(3, 1fr); }
+}
