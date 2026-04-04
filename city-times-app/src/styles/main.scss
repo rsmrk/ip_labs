@@ -1,0 +1,17 @@
+// Додай це всередину li в .city-list
+li {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    min-width: 180px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; // Додано для анімації
+
+    &:hover {
+      transform: translateY(-5px); // Підстрибування картки
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-color: #0066cc;
+    }
+}
