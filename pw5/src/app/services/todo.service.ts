@@ -22,7 +22,7 @@ export class TodoService {
     return this.http.put<Todo>(`${this.apiUrl}/${id}`, data);
   }
 
-  // Завдання 2: Реалізація DELETE-запиту для видалення [cite: 347]
+  // Завдання 2: еалізація DELETE-запиту для видалення [cite: 347]
   remove(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
