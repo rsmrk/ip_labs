@@ -63,13 +63,17 @@ export class AppComponent implements OnInit {
       });
     } else {
       // Якщо нове — додаємо [cite: 185]
-      this.formData.createdAt = Math.floor(Date.now() / 1000);
-      this.todoService.add(this.formData).subscribe({
-        next: (newTask) => {
-          this.todos.unshift(newTask);
-          this.resetForm();
-        }
-      });
+this.todoService.add(this.formData).subscribe({
+  next: (newTask) => {
+    const fixedTask = {
+      ...newTask,
+      userId: this.USER_ID
+    };
+
+    this.todos.unshift(fixedTask);
+    this.resetForm();
+  }
+});
     }
   }
 
