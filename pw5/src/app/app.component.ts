@@ -9,21 +9,21 @@ import { Todo } from './models/todo.model';
   standalone: false
 })
 export class AppComponent implements OnInit {
-  USER_ID = 12; // ТВІЙ НОМЕР ЗА ЖУРНАЛОМ [cite: 142]
+  // Твій залізобетонний ID
+  USER_ID = 12; 
 
   todos: Todo[] = [];
   isLoading = false;
   isEditing = false;
   currentEditId: string | null = null;
 
-  // Порожня форма для створення нового завдання [cite: 153]
+  // Форма ініціалізується з твоїм ID
   formData: Todo = this.getEmptyForm();
 
-  // Dependency Injection: Angular сам передає сервіс у конструктор [cite: 148]
   constructor(private todoService: TodoService) {}
 
   ngOnInit() {
-    this.fetchTodos(); // Завантажуємо дані при старті [cite: 151]
+    this.fetchTodos();
   }
 
   getEmptyForm(): Todo {
@@ -37,47 +37,51 @@ export class AppComponent implements OnInit {
     };
   }
 
-  // Отримання списку всіх завдань [cite: 163]
+  // Отримуємо тільки ТВОЇ завдання
   fetchTodos() {
     this.isLoading = true;
     this.todoService.getAll().subscribe({
       next: (data) => {
-        // Фільтруємо або просто показуємо (зазвичай краще фільтрувати за своїм ID)
-        this.todos = data.reverse();
+        // Фільтруємо масив, щоб бачити лише задачі студента 12
+        this.todos = data
+          .filter(t => t.userId === this.USER_ID)
+          .reverse();
         this.isLoading = false;
       },
       error: (err) => {
-        console.error(err);
+        console.error('Помилка завантаження:', err);
         this.isLoading = false;
       }
     });
   }
 
-  // Відправка форми (створення або редагування) [cite: 177]
+  // Відправка форми
   onSubmit() {
+    // ГОЛОВНИЙ ФІКС: Примусово ставимо 12 перед відправкою
+    this.formData.userId = this.USER_ID;
+
     if (this.isEditing && this.currentEditId) {
-      // Якщо редагуємо — викликаємо update [cite: 179]
+      // Редагування існуючого
       this.todoService.update(this.currentEditId, this.formData).subscribe(() => {
         this.fetchTodos();
         this.resetForm();
       });
     } else {
-      // Якщо нове — додаємо [cite: 185]
-this.todoService.add(this.formData).subscribe({
-  next: (newTask) => {
-    const fixedTask = {
-      ...newTask,
-      userId: this.USER_ID
-    };
-
-    this.todos.unshift(fixedTask);
-    this.resetForm();
-  }
-});
+      // Створення нового
+      this.formData.createdAt = Math.floor(Date.now() / 1000);
+      this.todoService.add(this.formData).subscribe({
+        next: (newTask) => {
+          // Додаємо в список лише якщо сервер підтвердив твій ID
+          if (newTask.userId === this.USER_ID) {
+            this.todos.unshift(newTask);
+          }
+          this.resetForm();
+        }
+      });
     }
   }
 
-  // Видалення завдання [cite: 194]
+  // Видалення
   deleteTask(id: string | undefined) {
     if (!id || !confirm("Видалити цю задачу?")) return;
     this.todoService.remove(id).subscribe(() => {
@@ -85,21 +89,23 @@ this.todoService.add(this.formData).subscribe({
     });
   }
 
-  // Швидке перемикання статусу виконано/не виконано [cite: 200]
+  // Швидка зміна статусу
   toggleDone(task: Todo) {
     const updatedStatus = !task.isDone;
     if(task.id) {
-      this.todoService.update(task.id, { isDone: updatedStatus }).subscribe(() => {
+      // Примусово вказуємо свій ID і тут про всяк випадок
+      this.todoService.update(task.id, { isDone: updatedStatus, userId: this.USER_ID }).subscribe(() => {
         task.isDone = updatedStatus;
       });
     }
   }
 
-  // Перехід у режим редагування [cite: 208]
+  // Редагування
   editTask(task: Todo) {
     this.isEditing = true;
     this.currentEditId = task.id || null;
-    this.formData = { ...task }; // Копіюємо дані в форму
+    // Копіюємо дані і ГАРАНТУЄМО, що userId буде 12, а не 4
+    this.formData = { ...task, userId: this.USER_ID }; 
   }
 
   resetForm() {
