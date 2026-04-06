@@ -13,22 +13,16 @@ export class TodoService {
     return this.http.get<Todo[]>(this.apiUrl);
   }
 
-  // --- ОСЬ ТУТ МИ ВСЕ ФІКСИМО ---
   add(todo: Todo): Observable<Todo> {
-    // Створюємо копію об'єкта і ЖОРСТКО вписуємо твій ID
-    const fixedTodo = { ...todo, userId: 12 }; 
-    
-    console.log('СЕРВІС ВІДПРАВЛЯЄ НА СЕРВЕР:', fixedTodo);
-    
-    return this.http.post<Todo>(this.apiUrl, fixedTodo);
+    return this.http.post<Todo>(this.apiUrl, todo);
   }
 
+  // Завдання 1: Реалізація PUT-запиту для оновлення [cite: 346]
   update(id: string, data: Partial<Todo>): Observable<Todo> {
-    // Навіть при оновленні гарантуємо, що ID твій
-    const fixedData = { ...data, userId: 12 };
-    return this.http.put<Todo>(`${this.apiUrl}/${id}`, fixedData);
+    return this.http.put<Todo>(`${this.apiUrl}/${id}`, data);
   }
 
+  // Завдання 2: Реалізація DELETE-запиту для видалення [cite: 347]
   remove(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
