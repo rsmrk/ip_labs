@@ -9,7 +9,7 @@ import { Todo } from './models/todo.model';
   standalone: false
 })
 export class AppComponent implements OnInit {
-  USER_ID = 4; // ТВІЙ НОМЕР ЗА ЖУРНАЛОМ [cite: 142]
+  USER_ID = 12; // ТВІЙ НОМЕР ЗА ЖУРНАЛОМ [cite: 142]
 
   todos: Todo[] = [];
   isLoading = false;
